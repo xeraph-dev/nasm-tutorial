@@ -5,7 +5,8 @@ LD = i686-linux-gnu-ld
 ASMFLAGS = -f elf
 LDFLAGS =
 
-TARGETS = helloworld helloworld-len helloworld-inc helloworld-lf helloworld-args helloworld-input helloworld-10 helloworld-itoa calculator-addition calculator-subtraction
+TARGETS = helloworld $(addprefix helloworld-,len inc lf args input 10 itoa) \
+					 $(addprefix calculator-,addition subtraction)
 OBJS = $(TARGETS:%=%.o)
 
 all: $(TARGETS)
