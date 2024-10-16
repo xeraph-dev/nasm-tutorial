@@ -7,6 +7,58 @@
 
 %define EXIT_SUCCESS 0
 
+
+;--------------------------------------------
+; void iprint(Integer number)
+; Integer printing function (itoa)
+iprint:
+    push    eax
+    push    ecx
+    push    edx
+    push    esi
+    mov     ecx, 0
+
+divide_loop:
+    inc     ecx
+    mov     edx, 0
+    mov     esi, 10
+    idiv    esi
+    add     edx, 48
+    push    edx
+    cmp     eax, 0
+    jnz     divide_loop
+
+print_loop:
+    dec     ecx
+    mov     eax, esp
+    call    sprint
+    pop     eax
+    cmp     ecx, 0
+    jnz     print_loop
+
+    pop     esi
+    pop     edx
+    pop     ecx
+    pop     eax
+    ret
+
+
+;--------------------------------------------
+; void iprintln(Integer number)
+; Integer printing function with linefeed (itoa)
+iprintln:
+    call    iprint
+
+    push    eax
+    mov     eax, 0xA
+    push    eax
+    mov     eax, esp
+    call    sprint
+    pop     eax
+    pop     eax
+    ret
+
+
 ;--------------------------------------------
 ; int slen(String message)
 ; String length calculation function
@@ -49,6 +101,7 @@ sprint:
     pop     edx
     ret
 
+
 ;--------------------------------------------
 ; void sprintln(String message)
 ; String printing with line feed function
@@ -64,6 +117,7 @@ sprintln:
     pop     eax
     pop     eax
     ret
+
 
 ;--------------------------------------------
 ; void exit()
