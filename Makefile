@@ -5,7 +5,7 @@ LD = i686-linux-gnu-ld
 ASMFLAGS = -f elf
 LDFLAGS =
 
-TARGETS = helloworld helloworld-len
+TARGETS = helloworld helloworld-len helloworld-inc
 OBJS = $(TARGETS:%=%.o)
 
 all: $(TARGETS)
