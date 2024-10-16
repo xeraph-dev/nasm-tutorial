@@ -48,6 +48,22 @@ sprint:
     ret
 
 ;--------------------------------------------
+; void sprintln(String message)
+; String printing with line feed function
+sprintln:
+    call    sprint
+
+    push    eax
+    mov     eax, 0xA
+    push    eax
+
+    mov     eax, esp
+    call    sprint
+    pop     eax
+    pop     eax
+    ret
+
+;--------------------------------------------
 ; void exit()
 ; Exit program and restore resources
 exit:

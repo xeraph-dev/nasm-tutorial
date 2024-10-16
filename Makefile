@@ -5,7 +5,7 @@ LD = i686-linux-gnu-ld
 ASMFLAGS = -f elf
 LDFLAGS =
 
-TARGETS = helloworld helloworld-len helloworld-inc
+TARGETS = helloworld helloworld-len helloworld-inc helloworld-lf
 OBJS = $(TARGETS:%=%.o)
 
 all: $(TARGETS)
@@ -13,7 +13,7 @@ all: $(TARGETS)
 $(TARGETS): %: %.o
 	$(LD) $(LDFLAGS) -o $@ $^
 
-%.o: %.asm
+%.o: %.asm functions.asm
 	$(ASM) $(ASMFLAGS) $< -o $@
 
 clean:
