@@ -1,7 +1,9 @@
-%define SYS_EXIT 1
-%define SYS_WRITE 4
+%define SYS_EXIT    1
+%define SYS_READ    3
+%define SYS_WRITE   4
 
-%define STDOUT 1
+%define STDIN   0
+%define STDOUT  1
 
 %define EXIT_SUCCESS 0
 
