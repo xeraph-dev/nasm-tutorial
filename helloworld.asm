@@ -18,3 +18,8 @@ _start:
     mov     ecx, msg
     mov     edx, msg_len
     int     0x80
+
+exit:
+    mov     eax, SYS_EXIT
+    mov     ebx, EXIT_SUCCESS
+    int     0x80
