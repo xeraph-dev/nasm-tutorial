@@ -58,7 +58,7 @@ iprint:
     push    esi
     mov     ecx, 0
 
-divide_loop:
+.divide_loop:
     inc     ecx
     mov     edx, 0
     mov     esi, 10
@@ -66,15 +66,15 @@ divide_loop:
     add     edx, 48
     push    edx
     cmp     eax, 0
-    jnz     divide_loop
+    jnz     .divide_loop
 
-print_loop:
+.print_loop:
     dec     ecx
     mov     eax, esp
     call    sprint
     pop     eax
     cmp     ecx, 0
-    jnz     print_loop
+    jnz     .print_loop
 
     pop     esi
     pop     edx
@@ -106,13 +106,13 @@ slen:
     push    ebx
     mov     ebx, eax
 
-nextchar:
+.nextchar:
     cmp     byte [eax], 0
-    jz      finished
+    jz      .finished
     inc     eax
-    jmp     nextchar
+    jmp     .nextchar
 
-finished:
+.finished:
     sub     eax, ebx
     pop     ebx
     ret
