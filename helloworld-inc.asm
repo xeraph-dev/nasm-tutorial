@@ -1,8 +1,8 @@
 %include    'functions.asm'
 
 section .data
-    msg1    db      'Hello, brave new world!', 0xA
-    msg2    db      'This is how we recycle in nasm.', 0xA
+    msg1    db      'Hello, brave new world!', 0xA, 0x0
+    msg2    db      'This is how we recycle in nasm.', 0xA, 0x0
 
 section .text
     global _start
