@@ -6,7 +6,7 @@ ASMFLAGS = -f elf
 LDFLAGS =
 
 TARGETS = helloworld $(addprefix helloworld-,len inc lf args input 10 itoa) \
-					 $(addprefix calculator-,addition subtraction multiplication)
+					 $(addprefix calculator-,addition subtraction multiplication division)
 OBJS = $(TARGETS:%=%.o)
 
 all: $(TARGETS)
