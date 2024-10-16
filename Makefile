@@ -5,7 +5,7 @@ LD = i686-linux-gnu-ld
 ASMFLAGS = -f elf
 LDFLAGS =
 
-TARGETS = helloworld helloworld-len helloworld-inc helloworld-lf helloworld-args helloworld-input
+TARGETS = helloworld helloworld-len helloworld-inc helloworld-lf helloworld-args helloworld-input helloworld-10
 OBJS = $(TARGETS:%=%.o)
 
 all: $(TARGETS)
