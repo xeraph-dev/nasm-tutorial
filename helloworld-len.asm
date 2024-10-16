@@ -12,8 +12,20 @@ section .text
     global _start
 
 _start:
-    mov     ebx, msg
-    mov     eax, ebx
+    mov     eax, msg
+    call    strlen
+
+    mov     edx, eax
+    mov     eax, SYS_WRITE
+    mov     ebx, STDOUT
+    mov     ecx, msg
+    int     0x80
+
+    call    exit
+
+strlen:
+    push    ebx
+    mov     ebx, eax
 
 nextchar:
     cmp     byte [eax], 0
@@ -23,11 +35,8 @@ nextchar:
 
 finished:
     sub     eax, ebx
-    mov     edx, eax
-    mov     eax, SYS_WRITE
-    mov     ebx, STDOUT
-    mov     ecx, msg
-    int     0x80
+    pop     ebx
+    ret
 
 exit:
     mov     eax, SYS_EXIT
