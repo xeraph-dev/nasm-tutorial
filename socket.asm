@@ -32,5 +32,13 @@ _bind:
     mov     eax, SYS_SOCKETCALL
     int     0x80
 
+_listen:
+    push    byte 1
+    push    edi
+    mov     ecx, esp
+    mov     ebx, LISTEN
+    mov     eax, SYS_SOCKETCALL
+    int     0x80
+
 _exit:
     call    exit
