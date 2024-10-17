@@ -18,7 +18,19 @@ _socket:
     mov     eax, SYS_SOCKETCALL
     int     0x80
 
-    call    iprintln
+_bind:
+    mov     edi, eax
+    push    dword 0x00000000
+    push    word 0x2923
+    push    word AF_INET
+    mov     ecx, esp
+    push    byte 16
+    push    ecx
+    push    edi
+    mov     ecx, esp
+    mov     ebx, BIND
+    mov     eax, SYS_SOCKETCALL
+    int     0x80
 
 _exit:
     call    exit

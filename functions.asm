@@ -28,9 +28,12 @@
 
 %define SOCK_STREAM 1
 
+%define AF_INET     2
+
 %define PF_INET     2
 
 %define SOCKET      1
+%define BIND        2
 
 
 ;--------------------------------------------
