@@ -83,5 +83,10 @@ _write:
     mov     eax, SYS_WRITE
     int     0x80
 
+_close:
+    mov     ebx, esi
+    mov     eax, SYS_CLOSE
+    int     0x80
+
 _exit:
     call    exit
