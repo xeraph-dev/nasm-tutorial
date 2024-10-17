@@ -1,7 +1,7 @@
 %include    'functions.asm'
 
 section .data
-    response        db  'HTTP/1.1 200 OK', 0xD, 0xA, 'Content-Type: text/html', 0xD, 0xA, 'Content-Length: 14', 0xD, 0xA, 0xD, 0xA, 'Hello World!', 0xD, 0xA, 0h
+    response        db  'HTTP/1.1 200 OK', 0xD, 0xA, 'Content-Type: text/html', 0xD, 0xA, 'Content-Length: 14', 0xD, 0xA, 0xD, 0xA, 'Hello World!', 0xD, 0xA, 0x0
     response_len    equ $ - response
  
 section .bss

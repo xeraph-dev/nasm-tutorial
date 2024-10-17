@@ -34,6 +34,7 @@
 
 %define SOCKET      1
 %define BIND        2
+%define CONNECT     3
 %define LISTEN      4
 %define ACCEPT      5
 

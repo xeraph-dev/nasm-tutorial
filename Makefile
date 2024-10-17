@@ -5,7 +5,7 @@ LD = i686-linux-gnu-ld
 ASMFLAGS = -f elf
 LDFLAGS =
 
-TARGETS = helloworld namespace fizzbuzz execute fork time create write open read close seek unlink socket \
+TARGETS = helloworld namespace fizzbuzz execute fork time create write open read close seek unlink socket crawler \
 			$(addprefix helloworld-,len inc lf args input 10 itoa) \
 			$(addprefix calculator-,addition subtraction multiplication division atoi) \
 
