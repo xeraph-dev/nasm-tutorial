@@ -1,14 +1,15 @@
-%define SYS_EXIT    1
-%define SYS_FORK    2
-%define SYS_READ    3
-%define SYS_WRITE   4
-%define SYS_OPEN    5
-%define SYS_CLOSE   6
-%define SYS_CREAT   8
-%define SYS_UNLINK  10
-%define SYS_EXECV   11
-%define SYS_TIME    13
-%define SYS_LSEEK   19
+%define SYS_EXIT        1
+%define SYS_FORK        2
+%define SYS_READ        3
+%define SYS_WRITE       4
+%define SYS_OPEN        5
+%define SYS_CLOSE       6
+%define SYS_CREAT       8
+%define SYS_UNLINK      10
+%define SYS_EXECV       11
+%define SYS_TIME        13
+%define SYS_LSEEK       19
+%define SYS_SOCKETCALL  102
 
 %define STDIN   0
 %define STDOUT  1
@@ -22,6 +23,14 @@
 %define SEEK_SET    0
 %define SEEK_CUR    1
 %define SEEK_END    2
+
+%define IPPROTO_TCP 6
+
+%define SOCK_STREAM 1
+
+%define PF_INET     2
+
+%define SOCKET      1
 
 
 ;--------------------------------------------
