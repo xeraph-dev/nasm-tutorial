@@ -7,6 +7,7 @@
 %define SYS_CREAT   8
 %define SYS_EXECV   11
 %define SYS_TIME    13
+%define SYS_LSEEK   19
 
 %define STDIN   0
 %define STDOUT  1
@@ -16,6 +17,10 @@
 %define O_RDONLY    0
 %define O_WRONLY    1
 %define O_RDWR      2
+
+%define SEEK_SET    0
+%define SEEK_CUR    1
+%define SEEK_END    2
 
 
 ;--------------------------------------------
