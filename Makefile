@@ -5,7 +5,7 @@ LD = i686-linux-gnu-ld
 ASMFLAGS = -f elf
 LDFLAGS =
 
-TARGETS = helloworld namespace fizzbuzz execute fork time \
+TARGETS = helloworld namespace fizzbuzz execute fork time create \
 			$(addprefix helloworld-,len inc lf args input 10 itoa) \
 			$(addprefix calculator-,addition subtraction multiplication division atoi) \
 
@@ -20,4 +20,4 @@ $(TARGETS): %: %.o
 	$(ASM) $(ASMFLAGS) $< -o $@
 
 clean:
-	rm -f $(TARGETS) $(OBJS)
+	rm -f $(TARGETS) $(OBJS) readme.txt

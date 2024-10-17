@@ -2,6 +2,7 @@
 %define SYS_FORK    2
 %define SYS_READ    3
 %define SYS_WRITE   4
+%define SYS_CREAT   8
 %define SYS_EXECV   11
 %define SYS_TIME    13
 
