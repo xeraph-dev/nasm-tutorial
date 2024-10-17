@@ -1,5 +1,8 @@
 %include    'functions.asm'
 
+section .bss
+    buffer  resb    255,
+
 section .text
     global _start
 
@@ -48,6 +51,26 @@ _accept:
     mov     ebx, ACCEPT
     mov     eax, SYS_SOCKETCALL
     int     0x80
+
+_fork:
+    mov     esi, eax
+    mov     eax, SYS_FORK
+    int     0x80
+
+    cmp     eax, 0
+    jz      _read
+
+    jmp     _accept
+
+_read:
+    mov     edx, 255
+    mov     ecx, buffer
+    mov     ebx, esi
+    mov     eax, SYS_READ
+    int     0x80
+
+    mov     eax, buffer
+    call    sprintln
 
 _exit:
     call    exit
