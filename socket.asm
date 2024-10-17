@@ -40,5 +40,14 @@ _listen:
     mov     eax, SYS_SOCKETCALL
     int     0x80
 
+_accept:
+    push    byte 0
+    push    byte 0
+    push    edi
+    mov     ecx, esp
+    mov     ebx, ACCEPT
+    mov     eax, SYS_SOCKETCALL
+    int     0x80
+
 _exit:
     call    exit
