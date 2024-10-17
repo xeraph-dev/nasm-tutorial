@@ -2,6 +2,7 @@
 %define SYS_FORK    2
 %define SYS_READ    3
 %define SYS_WRITE   4
+%define SYS_OPEN    5
 %define SYS_CREAT   8
 %define SYS_EXECV   11
 %define SYS_TIME    13
@@ -10,6 +11,10 @@
 %define STDOUT  1
 
 %define EXIT_SUCCESS 0
+
+%define O_RDONLY    0
+%define O_WRONLY    1
+%define O_RDWR      2
 
 
 ;--------------------------------------------
