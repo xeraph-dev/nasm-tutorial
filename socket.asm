@@ -1,5 +1,9 @@
 %include    'functions.asm'
 
+section .data
+    response        db  'HTTP/1.1 200 OK', 0xD, 0xA, 'Content-Type: text/html', 0xD, 0xA, 'Content-Length: 14', 0xD, 0xA, 0xD, 0xA, 'Hello World!', 0xD, 0xA, 0h
+    response_len    equ $ - response
+ 
 section .bss
     buffer  resb    255,
 
@@ -71,6 +75,13 @@ _read:
 
     mov     eax, buffer
     call    sprintln
+
+_write:
+    mov     edx, response_len
+    mov     ecx, response
+    mov     ebx, esi
+    mov     eax, SYS_WRITE
+    int     0x80
 
 _exit:
     call    exit
